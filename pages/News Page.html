@@ -1,0 +1,760 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <!-- nav-bar -->
+    <div class="bg-primary sticky-top">
+        <div class="py-3 px-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+            <div class="col-4 text-left d-flex align-items-center gap-2">
+            <a data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ffffff" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5M.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5"/>
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                </svg></a>
+            <a class="Dashboard text-white fs-2 fw-bolder" href="#" data-bs-toggle="offcanvas" data-bs-target=".offcanvas" aria-controls="offcanvas">GovTech</a>
+            </div>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-bg-primary" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="text-end">
+            <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#Login">Login</button>
+            <button type="button" class="btn btn-warning text-primary" data-bs-toggle="modal" data-bs-target="#Sign-Up">Sign-up</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Log In and Sign Up Modals -->
+    <div class="modal fade" id="Login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+            <h1 class="modal-title " id="exampleModalToggleLabel">Log-In</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group mt-2">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-2">Log In</button>
+            </form>
+            </div>
+            <div class="modal-footer bg-primary text-white">
+            <button class="btn btn-outline-warning" data-bs-target="#Sign-Up" data-bs-toggle="modal">No Account?</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Sign Up -->
+    <div class="modal fade" id="Sign-up" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+            <h1 class="modal-title" id="exampleModalToggleLabel2">Sign Up</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <form>
+                <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group mt-2">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group mt-2">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-2">Sign Up</button>
+            </form>
+            </div>
+            <div class="modal-footer bg-primary text-white">
+            <button class="btn btn-outline-light" data-bs-target="#Login" data-bs-toggle="modal">Log-in</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="border-bottom">
+      <nav class="navbar container navbar-expand-lg">
+          <div class="container-fluid d-flex justify-content-center">
+            <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <div class="navigation-bar nav me-auto mb-2 mb-lg-0">
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="../index.html">Home</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="About Us page.html">About Us</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="IT Policies page.html">IT Policies</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="Resources page.html">Resources</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="Training page.html">Training</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold bg-warning text-white" aria-current="page" href="News Page.html">News</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                    <a class="nav-link active fw-bold" aria-current="page" href="../index.html#FAQs">FAQs</a>
+                  </div> <div class="vr m-auto" style="height: 10px;"></div>
+                  <div class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="#Contact-Support">Contact</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+
+<!-- news healines  -->
+    <section class="container mt-3">
+        <div class="p-5 mt mb-4 bg-body-tertiary rounded-3">
+            <div class="container-fluid ">
+              <h1 class="display-5 fw-bold">Government Launches New Digital Identity Verification System</h1>
+              <p class="col-md-8 fs-4">Join us for an in-depth session on cybersecurity practices and risk management strategies tailored for government agencies.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#headlines">Continue Reading</button>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8">
+              <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                Latest News
+              </h3>
+        
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal1"  data-bs-toggle="modal" data-bs-target="#Modal1">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">National Cybersecurity Strategy Unveiled to Safeguard Public Data</h5>
+                      <p class="card-text">The government has launched a comprehensive National Cybersecurity Strategy aimed at fortifying defenses against cyber threats and safeguarding critical public data. This strategic initiative comes amidst rising concerns over cyberattacks targeting government institutions and private sector entities alike.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal2"  data-bs-toggle="modal" data-bs-target="#Modal2">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Smart City Initiative Advances with IoT Integration in Urban Areas</h5>
+                      <p class="card-text">The government's Smart City Initiative has gained momentum with the integration of Internet of Things (IoT) technology in urban areas. This transformative initiative aims to improve urban living standards through innovative digital solutions and sustainable development practices.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal3"  data-bs-toggle="modal" data-bs-target="#Modal3">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Expansion of Broadband Access to Rural Communities Under New Government Program</h5>
+                      <p class="card-text">In a bid to bridge the digital divide, the government has launched a comprehensive program aimed at expanding broadband access to rural communities. This initiative seeks to empower rural residents with reliable internet connectivity and foster economic growth through digital inclusion.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal4"  data-bs-toggle="modal" data-bs-target="#Modal4">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">AI-Powered Healthcare Solutions Implemented Across Public Hospitals</h5>
+                      <p class="card-text">In a pioneering initiative aimed at transforming healthcare delivery, the government has introduced AI-powered solutions in public hospitals. These innovations leverage artificial intelligence (AI) to enhance diagnostics, improve patient care, and streamline hospital operations.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal5"  data-bs-toggle="modal" data-bs-target="#Modal5">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Government Partners with Tech Giants to Enhance Digital Services</h5>
+                      <p class="card-text">In a strategic collaboration aimed at modernizing public sector operations, the government has partnered with leading technology companies to enhance digital services for citizens and businesses. This partnership aims to leverage advanced technologies and innovation to improve service delivery and efficiency across government agencies.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-3" style="max-width: 100%;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <a href="#Modal6"  data-bs-toggle="modal" data-bs-target="#Modal6">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="lightblue"/></svg>
+                    </a>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Blockchain Pilot Project to Secure Land Records Commences in Carmona City</h5>
+                      <p class="card-text">The government has launched a pioneering blockchain pilot project aimed at revolutionizing land record management and ensuring transparency in property transactions. This initiative represents a significant step towards digitizing government services and enhancing trust in public administration.</p>
+                      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- About  -->
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-primary rounded">
+                        <h4 class="text-white fst-italic fw-bold">About</h4>
+                        <p class="text-white">Stay updated with the latest from GovTech! Discover our newest IT policies, training programs, and innovations in government IT operations. Explore our articles for the latest insights and announcements.</p>
+                    </div>
+            
+                    <div>
+                        <h4 class="fst-italic">Recent News</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">National Cloud Computing Policy Aimed at Boosting Government Efficiency</h6>
+                                    <small class="text-body-secondary">January 15, 2024</small>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">Data Privacy Law Amendments Passed to Strengthen Consumer Protections</h6>
+                                    <small class="text-body-secondary">January 14, 2024</small>
+                                </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                                <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                                <div class="col-lg-8">
+                                    <h6 class="mb-0">Open Data Initiative Launched to Promote Transparency and Innovation</h6>
+                                    <small class="text-body-secondary">January 13, 2024</small>
+                                </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <div class="p-4 mb-3">
+                        <h4 class="fst-italic">Archives</h4>
+                        <ol class="list-unstyled mb-0">
+                            <li><a href="#">March 2023</a></li>
+                            <li><a href="#">February 2023</a></li>
+                            <li><a href="#">January 2023</a></li>
+                            <li><a href="#">December 2022</a></li>
+                            <li><a href="#">November 2022</a></li>
+                            <li><a href="#">October 2022</a></li>
+                            <li><a href="#">September 2022</a></li>
+                            <li><a href="#">August 2022</a></li>
+                            <li><a href="#">July 2022</a></li>
+                            <li><a href="#">June 2022</a></li>
+                            <li><a href="#">May 2022</a></li>
+                            <li><a href="#">April 2022</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- modals for access -->
+    <div class="modal modal-lg fade" id="headlines" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">HeadLines</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll;">
+                    <div class="container">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                            <h5 class="card-title">Government Launches New Digital Identity Verification System</h5>
+                            <p class="card-text">
+                                In a groundbreaking move aimed at modernizing public service delivery, the government has introduced the Digital Identity Verification System (DIVS). Developed in collaboration with leading tech firms, DIVS leverages biometric authentication and machine learning algorithms to revolutionize how citizens interact with government services online.
+                            </p>
+                            
+                            <h6>Implementation and Benefits</h6>
+                            <p>
+                                DIVS allows citizens to securely verify their identities remotely using biometric data such as facial recognition or fingerprint scans. This streamlined process eliminates the need for physical visits to government offices, thereby enhancing convenience and accessibility for all citizens, including those in rural areas.
+                            </p>
+                            
+                            <h6>Key Features</h6>
+                            <ul>
+                                <li>Enhanced Security: Advanced encryption and stringent verification protocols protect sensitive citizen data from unauthorized access.</li>
+                                <li>Efficiency Gains: Reduction in processing times for various government transactions, improving overall service delivery.</li>
+                                <li>Future Integration: Plans to integrate DIVS with additional services like tax filings and healthcare registrations are underway, promising further efficiencies and cost savings.</li>
+                            </ul>
+                            
+                            <h6>Impact on Government Services</h6>
+                            <p>
+                                The introduction of DIVS is expected to transform public sector operations, leading to more efficient service delivery and significant cost savings. By embracing digital identity verification, the government aims to bolster trust in its digital infrastructure while ensuring robust security measures are in place.
+                            </p>
+                            
+                            <h6>Conclusion</h6>
+                            <p>
+                                With DIVS, the government not only enhances service accessibility but also sets a precedent for digital governance in the region. As technology continues to evolve, DIVS stands as a cornerstone of the government's commitment to modernize public service delivery while safeguarding citizen privacy and security.
+                            </p>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- News -->
+    <div class="modal modal-lg fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">National Cybersecurity Strategy Unveiled to Safeguard Public Data</h5>
+                          <p class="card-text">
+                            The government has launched a comprehensive National Cybersecurity Strategy aimed at fortifying defenses against cyber threats and safeguarding critical public data. This strategic initiative comes amidst rising concerns over cyberattacks targeting government institutions and private sector entities alike.
+                          </p>
+                          
+                          <h6>Strategic Framework and Objectives</h6>
+                          <p>
+                            The National Cybersecurity Strategy outlines a multi-layered approach to cybersecurity, focusing on enhanced threat detection, capacity building through training programs, and public awareness campaigns to educate citizens and businesses on cybersecurity best practices.
+                          </p>
+                          
+                          <h6>Collaborative Efforts</h6>
+                          <p>
+                            In collaboration with industry experts and international partners, the government aims to strengthen cyber defenses across critical infrastructure sectors. Partnerships with private sector entities are crucial in sharing threat intelligence and best practices to enhance national cybersecurity resilience.
+                          </p>
+                          
+                          <h6>Future Directions</h6>
+                          <p>
+                            Looking ahead, the National Cybersecurity Strategy will evolve to address emerging threats such as ransomware attacks and data breaches. Continuous updates and investments in cybersecurity infrastructure will ensure that the country remains resilient against evolving cyber threats.
+                          </p>
+                          
+                          <h6>Conclusion</h6>
+                          <p>
+                            By unveiling this comprehensive strategy, the government demonstrates its commitment to protecting national interests and securing public trust in digital services. The National Cybersecurity Strategy sets a clear roadmap for safeguarding critical infrastructure and promoting a secure digital environment for all citizens.
+                          </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Smart City Initiative Advances with IoT Integration in Urban Areas</h5>
+                          <p class="card-text">
+                            The government's Smart City Initiative has gained momentum with the integration of Internet of Things (IoT) technology in urban areas. This transformative initiative aims to improve urban living standards through innovative digital solutions and sustainable development practices.
+                          </p>
+                          
+                          <h6>IoT Integration in Urban Infrastructure</h6>
+                          <p>
+                            Under the Smart City Initiative, IoT sensors and devices are deployed across urban infrastructure to gather real-time data on traffic flow, air quality, energy consumption, and public services. This data-driven approach enables city planners to make informed decisions and optimize resource allocation for enhanced efficiency.
+                          </p>
+                          
+                          <h6>Benefits to Citizens</h6>
+                          <ul>
+                            <li>Improved Public Services: Smart transportation systems, optimized waste management, and enhanced public safety through IoT-enabled surveillance and emergency response systems.</li>
+                            <li>Environmental Sustainability: Reduced energy consumption and carbon emissions, promoting sustainable urban development.</li>
+                          </ul>
+                          
+                          <h6>Public-Private Partnerships</h6>
+                          <p>
+                            Public-private partnerships play a crucial role in financing and implementing smart city projects. Collaborations with technology firms and research institutions facilitate innovation in IoT solutions and ensure the scalability of smart city initiatives across urban centers.
+                          </p>
+                          
+                          <h6>Conclusion</h6>
+                          <p>
+                            The integration of IoT technology under the Smart City Initiative marks a significant leap towards creating livable, connected, and sustainable urban spaces. By harnessing digital innovation, the government paves the way for smart cities that enhance quality of life, promote economic growth, and foster a resilient urban ecosystem.
+                          </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg fade" id="Modal3" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Expansion of Broadband Access to Rural Communities Under New Government Program</h5>
+                          <p class="card-text">
+                            In a bid to bridge the digital divide, the government has launched a comprehensive program aimed at expanding broadband access to rural communities. This initiative seeks to empower rural residents with reliable internet connectivity and foster economic growth through digital inclusion.
+                          </p>
+                          
+                          <h6>Program Objectives and Scope</h6>
+                          <p>
+                            The broadband expansion program focuses on infrastructure development, affordability through subsidies, and enhancing digital literacy among rural residents. These efforts aim to enable rural communities to fully utilize internet-enabled services and opportunities for socio-economic development.
+                          </p>
+                          
+                          <h6>Impact on Rural Development</h6>
+                          <ul>
+                            <li>Economic Opportunities: E-commerce growth, improved access to healthcare and education, and enhanced social inclusion through connectivity.</li>
+                            <li>Collaborative Efforts: Public-private partnerships drive infrastructure deployment and community outreach in underserved rural areas.</li>
+                          </ul>
+                          
+                          <h6>Future Outlook</h6>
+                          <p>
+                            As the program continues to rollout, future phases may explore advanced technologies such as 5G networks and satellite internet to further enhance broadband coverage and speed in rural communities, fostering digital and economic empowerment.
+                          </p>
+                          
+                          <h6>Conclusion</h6>
+                          <p>
+                            The government's commitment to expanding broadband access underscores its dedication to equitable digital access and inclusive economic growth. By connecting rural communities to the digital economy, the broadband expansion program lays the foundation for a more connected and prosperous nation.
+                          </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg fade" id="Modal4" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">AI-Powered Healthcare Solutions Implemented Across Public Hospitals</h5>
+                          <p class="card-text">
+                            In a pioneering initiative aimed at transforming healthcare delivery, the government has introduced AI-powered solutions in public hospitals. These innovations leverage artificial intelligence (AI) to enhance diagnostics, improve patient care, and streamline hospital operations.
+                          </p>
+                          
+                          <h6>Applications of AI in Healthcare</h6>
+                          <ul>
+                            <li>Medical Imaging: AI algorithms assist radiologists in analyzing medical images for accurate diagnoses.</li>
+                            <li>Predictive Analytics: AI models predict patient outcomes and recommend personalized treatment plans based on clinical data.</li>
+                            <li>Administrative Efficiency: AI-powered chatbots automate patient inquiries and administrative tasks, freeing healthcare professionals' time.</li>
+                          </ul>
+                          
+                          <h6>Benefits to Patients and Healthcare Providers</h6>
+                          <ul>
+                            <li>Improved Accuracy: Reduced diagnostic errors and enhanced treatment precision.</li>
+                            <li>Efficiency Gains: Streamlined workflows and reduced waiting times.</li>
+                            <li>Cost Savings: Preventative care and early interventions help reduce healthcare costs.</li>
+                          </ul>
+                          
+                          <h6>Future Prospects</h6>
+                          <p>
+                            As AI technologies evolve, future applications may include virtual health assistants for remote monitoring and AI-guided surgery, further advancing precision medicine and patient-centered care in public hospitals.
+                          </p>
+                          
+                          <h6>Conclusion</h6>
+                          <p>
+                            The deployment of AI-powered healthcare solutions represents a transformative leap towards enhancing healthcare outcomes and operational efficiencies in public hospitals. By harnessing AI technology, the government aims to improve patient care, optimize hospital management, and advance the nation's healthcare infrastructure.
+                          </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg fade" id="Modal5" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                          <h5 class="card-title">Government Partners with Tech Giants to Enhance Digital Services</h5>
+                          <p class="card-text">
+                            In a strategic collaboration aimed at modernizing public sector operations, the government has partnered with leading technology companies to enhance digital services for citizens and businesses. This partnership aims to leverage advanced technologies and innovation to improve service delivery and efficiency across government agencies.
+                          </p>
+                          
+                          <h6>Strategic Partnership Objectives</h6>
+                          <ul>
+                            <li>Digital Transformation: Implementing cloud computing solutions to improve data accessibility and operational flexibility.</li>
+                            <li>Cybersecurity Enhancement: Deploying state-of-the-art cybersecurity measures to safeguard citizen data.</li>
+                            <li>User-Centric Design: Redesigning digital platforms to enhance user experience and accessibility.</li>
+                          </ul>
+                          
+                          <h6>Benefits of Collaboration</h6>
+                          <ul>
+                            <li>Innovation Acceleration: Access to cutting-edge technologies accelerates innovation in public service delivery.</li>
+                            <li>Scalability: Scalable solutions enable seamless integration and adaptation to citizen needs and technological advancements.</li>
+                            <li>Economic Growth: Collaborative efforts stimulate economic growth by attracting investments and creating jobs.</li>
+                          </ul>
+                          
+                          <h6>Public Trust and Transparency</h6>
+                          <p>
+                            Ensuring transparency and accountability in the partnership is paramount. The government promotes open dialogue and stakeholder engagement to build public trust and confidence in digital initiatives and partnerships.
+                          </p>
+                          
+                          <h6>Conclusion</h6>
+                          <p>
+                            The strategic partnership between the government and tech giants marks a significant milestone in advancing digital transformation and innovation in public administration. By harnessing collective expertise and resources, the partnership aims to create a resilient, efficient, and citizen-centric government ecosystem.
+                          </p>
+                        </div>
+                    </div>                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg fade" id="Modal6" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="height: 90%">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">News Update</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow-y: scroll">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Blockchain Pilot Project to Secure Land Records Commences in [Country/Region]</h5>
+                            <p class="card-text">
+                                The government has launched a pioneering blockchain pilot project aimed at revolutionizing land record management and ensuring transparency in property transactions. This initiative represents a significant step towards digitizing government services and enhancing trust in public administration.
+                            </p>
+                            
+                            <h6>Blockchain Technology in Land Records</h6>
+                            <ul>
+                                <li>Secure Transactions: Digital verification and authentication of land ownership to reduce fraud and disputes.</li>
+                                <li>Transparency: Real-time access to accurate land records for citizens, legal entities, and government agencies.</li>
+                                <li>Efficiency: Streamlined processes for land registry and property tax assessments, reducing bureaucratic inefficiencies.</li>
+                            </ul>
+                            
+                            <h6>Benefits to Stakeholders</h6>
+                            <ul>
+                                <li>Citizens: Increased transparency and trust in land transactions, reducing the risk of property fraud.</li>
+                                <li>Government: Enhanced operational efficiency and cost savings through automated land management processes.</li>
+                                <li>Investors and Developers: Improved confidence in property investments due to secure and transparent land records.</li>
+                            </ul>
+                            
+                            <h6>Collaborative Efforts and Future Expansion</h6>
+                            <p>
+                            The government collaborates with blockchain technology firms and legal experts to pilot the project. Future phases may include scaling the initiative nationwide
+                            and integrating additional functionalities such as smart contracts for automated property transactions and land-use planning.
+                            </p>
+                            
+                            <h6>Conclusion</h6>
+                            <p>
+                            The blockchain pilot project for land records management marks a transformative initiative towards digital governance and transparency in [Country/Region]. By harnessing blockchain technology, the government aims to modernize land administration, enhance public trust, and stimulate economic growth through secure and efficient property transactions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- footer -->
+        <section id="Contact-Support" class="text-white bg-primary">
+            <section class="container pt-2">
+              <div class="row">
+                <div class="d-flex justify-content-between pt-2">
+                  <form>
+                    <h1>Contact & Support GovTech</h1>
+                    <p>Need assistance or have questions? Our Contact & Support section is here to help. Reach out to us for technical support, inquiries, or feedback. Use our contact form to get in touch, and our dedicated team will respond promptly to address your needs. We're committed to ensuring you have a seamless experience with GovTech Hub.</p>
+                    <div class="d-flex justify-content-between ">
+                      <div class="d-flex flex-column flex-sm-row w-50 gap-2">
+                        <label for="newsletter1" class="visually-hidden">Email address</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                        <button type="button" class="btn btn-light">Support</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center py-4">
+                <p>© 2024 GovTech. All rights reserved.</p>
+                <ul class="list-unstyled d-flex gap-3">
+                  <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                  </svg></a></li>
+                  <li><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                  </svg></a></li>
+                  <li><a href="#"></a><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-instagram" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                  </svg></li>
+                </ul>
+              </div>
+            </section>
+        </section>
+        <footer class="pt-3">
+          <div class="trans-seal container-fluid d-flex justify-content-between px-3">
+              <img class="image-fluid" src="../images/trans seal.png" alt="transparent seal" width="200" height="200">
+              <ul>
+                <li class="list-group-item"></li>
+                <li class="list-group-item">Email: contact@govtechhub.gov</li>
+                <li class="list-group-item">Phone: (123) 456-7890</li>
+                <li class="list-group-item">Address: 123 Government St., GMA, Cavite, Philippines</li>
+              </ul>
+          </div>
+      </footer>
+    
+        
+<!-- off canvas -->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header d-flex justify-content-between align-items-center">
+          <h5 class="offcanvas-title d-flex align-items-center gap-1 text-white" id="offcanvasWithBothOptionsLabel"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+              <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+            </svg> Profile</h5>
+          <a data-bs-dismiss="offcanvas" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+            </svg> </a>
+      </div>
+      <div class="offcanvas-body-profile p-2">
+          <div class="image-profile container d-flex align-items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
+              </svg>
+              <div class="data-profile lh-1">
+                  <p><span class="fw-bold">Name: </Span> Jhillian Eizhelle P. Custodio</p>
+                  <p><span class="fw-bold">Age: </Span> 34</p>
+                  <p><span class="fw-bold">Sex </Span> Male</p>
+              </div>
+          </div>
+      </div>
+      <div class="offcanvas-body">
+          <div class="accordion accordion-flush fw-bold" id="accordionFlushExample">
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="flush-collapseTwo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07"/>
+                    </svg> Statistics</p>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p>Visitors: <span class="text-primary">5</span><br>Active Users: <span class="text-success">145</span><br>New Posts: <span class="text-primary">10</span></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1"  data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                    </svg> Recent Activity</p>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p>Post: <span class="text-primary">"E-learning"</span> publish by admin<br>User: <span class="text-primary">"Jhillian Eizhelle P. Custodio" </span>registered</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"/>
+                    </svg> Notifications</p>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p><span class="text-success">3 </span>new requests pending</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="flush-collapseFour"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-kanban-fill" viewBox="0 0 16 16">
+                      <path d="M2.5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm5 2h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1m-5 1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1zm9-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1"/>
+                    </svg> Manage Page</p>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p>- <a href="#" class="text-decoration-none">Home</a>, <a href="#" class="text-decoration-none">About Us</a>, <a href="#" class="text-decoration-none">IT Policies</a>, <a href="#" class="text-decoration-none">Resources</a>, <a href="#" class="text-decoration-none">Training</a>, <a href="#" class="text-decoration-none">News</a><br>
+                              Edit: <button type="button" class="btn btn-outline-success btn-sm mt-2">Add New</button>
+                              <button type="button" class="btn btn-outline-danger btn-sm mt-2">Delete</button>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="flush-collapseFive"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ban-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M2.71 12.584q.328.378.706.707l9.875-9.875a7 7 0 0 0-.707-.707l-9.875 9.875Z"/>
+                    </svg> Permissions</p>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p>- <a href="#" class="text-decoration-none">Administrator</a>, <a href="#" class="text-decoration-none">Editor</a>, <a href="#" class="text-decoration-none">Contributor</a><br> Optimize
+                          <a href="#">for search </a>engines
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="accordion-item py-2 px-2">
+                  <p class="accordion-header d-flex align-items-center gap-1" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="flush-collapseSix"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-wide-connected" viewBox="0 0 16 16">
+                      <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5m0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78zM5.048 3.967l-.087.065zm-.431.355A4.98 4.98 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8zm.344 7.646.087.065z"/>
+                    </svg> General Settings</p>
+                  <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body text-white">
+                          <p>- <a href="#" class="text-decoration-none">Meta Tags</a>, <a href="#" class="text-decoration-none">Keywords</a>, <a href="#" class="text-decoration-none">Descriptions</a><br> Optimize
+                          <a href="#">for search </a>engines
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
